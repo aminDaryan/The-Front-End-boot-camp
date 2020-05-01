@@ -1,0 +1,90 @@
+[debug] [2020-05-01T14:20:20.615Z] ----------------------------------------------------------------------
+[debug] [2020-05-01T14:20:20.617Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Administrator.DESKTOP-H4PNJ90.000\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2020-05-01T14:20:20.617Z] CLI Version:   8.1.1
+[debug] [2020-05-01T14:20:20.617Z] Platform:      win32
+[debug] [2020-05-01T14:20:20.617Z] Node Version:  v12.14.1
+[debug] [2020-05-01T14:20:20.618Z] Time:          Fri May 01 2020 18:50:20 GMT+0430 (Iran Daylight Time)
+[debug] [2020-05-01T14:20:20.618Z] ----------------------------------------------------------------------
+[debug] [2020-05-01T14:20:20.618Z] 
+[debug] [2020-05-01T14:20:20.628Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-05-01T14:20:20.629Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Administrator.DESKTOP-H4PNJ90.000\Desktop\Code\Project\Shopping Website
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  If you want to create a project in a Google Cloud organization or folder, please use "firebase projects:create" instead, and return to this command when you've created the project.
+[debug] [2020-05-01T14:21:40.991Z] ----------------------------------------------------------------------
+[debug] [2020-05-01T14:21:40.993Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Administrator.DESKTOP-H4PNJ90.000\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2020-05-01T14:21:40.993Z] CLI Version:   8.1.1
+[debug] [2020-05-01T14:21:40.993Z] Platform:      win32
+[debug] [2020-05-01T14:21:40.993Z] Node Version:  v12.14.1
+[debug] [2020-05-01T14:21:40.994Z] Time:          Fri May 01 2020 18:51:40 GMT+0430 (Iran Daylight Time)
+[debug] [2020-05-01T14:21:40.994Z] ----------------------------------------------------------------------
+[debug] [2020-05-01T14:21:40.994Z] 
+[debug] [2020-05-01T14:21:41.004Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-05-01T14:21:41.005Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Administrator.DESKTOP-H4PNJ90.000\Desktop\Code\Project\Shopping Website
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2020-05-01T14:21:50.068Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects?pageSize=100  
+ 
+[debug] [2020-05-01T14:21:50.525Z] <<< HTTP RESPONSE 403 {"content-type":"text/html; charset=UTF-8","referrer-policy":"no-referrer","content-length":"1595","date":"Fri, 01 May 2020 14:21:51 GMT","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\""}
+[debug] [2020-05-01T14:21:50.525Z] <<< HTTP RESPONSE BODY <!DOCTYPE html>
+<html lang=en>
+  <meta charset=utf-8>
+  <meta name=viewport content="initial-scale=1, minimum-scale=1, width=device-width">
+  <title>Error 403 (Forbidden)!!1</title>
+  <style>
+    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:url(//www.google.com/images/errors/robot.png) 100% 5px no-repeat;padding-right:205px}p{margin:11px 0 22px;overflow:hidden}ins{color:#777;text-decoration:none}a img{border:0}@media screen and (max-width:772px){body{background:none;margin-top:0;max-width:none;padding-right:0}}#logo{background:url(//www.google.com/images/branding/googlelogo/1x/googlelogo_color_150x54dp.png) no-repeat;margin-left:-5px}@media only screen and (min-resolution:192dpi){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat 0% 0%/100% 100%;-moz-border-image:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) 0}}@media only screen and (-webkit-min-device-pixel-ratio:2){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat;-webkit-background-size:100% 100%}}#logo{display:inline-block;height:54px;width:150px}
+  </style>
+  <a href=//www.google.com/><span id=logo aria-label=Google></span></a>
+  <p><b>403.</b> <ins>That’s an error.</ins>
+  <p>Your client does not have permission to get URL <code>/v1beta1/projects</code> from this server.  <ins>That’s all we know.</ins>
+
+[debug] [2020-05-01T14:21:50.526Z] HTTP Error: 403, Unknown Error
+[debug] [2020-05-01T14:21:50.974Z] FirebaseError: HTTP Error: 403, Unknown Error
+    at module.exports (C:\Users\Administrator.DESKTOP-H4PNJ90.000\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:38:12)
+    at Request._callback (C:\Users\Administrator.DESKTOP-H4PNJ90.000\AppData\Roaming\npm\node_modules\firebase-tools\lib\api.js:41:35)
+    at Request.self.callback (C:\Users\Administrator.DESKTOP-H4PNJ90.000\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:185:22)
+    at Request.emit (events.js:223:5)
+    at Request.EventEmitter.emit (domain.js:475:20)
+    at Request.<anonymous> (C:\Users\Administrator.DESKTOP-H4PNJ90.000\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:1154:10)
+    at Request.emit (events.js:223:5)
+    at Request.EventEmitter.emit (domain.js:475:20)
+    at IncomingMessage.<anonymous> (C:\Users\Administrator.DESKTOP-H4PNJ90.000\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:1076:12)
+    at Object.onceWrapper (events.js:312:28)
+    at IncomingMessage.emit (events.js:228:7)
+    at IncomingMessage.EventEmitter.emit (domain.js:475:20)
+    at endReadableNT (_stream_readable.js:1185:12)
+    at processTicksAndRejections (internal/process/task_queues.js:81:21)
+[error] 
+[error] Error: Failed to list Firebase projects. See firebase-debug.log for more info.

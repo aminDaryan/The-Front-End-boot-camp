@@ -1,0 +1,38 @@
+.button {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+
+  &__icon {
+    position: absolute;
+    top: 0.3vw;
+    right: 1vw;
+    font-size: 1.5vw;
+  }
+
+  &__text {
+    position: absolute;
+    top: 0.5vw;
+    display: inline-block;
+    font-size: 1vw;
+    font-family: Shabnam;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .button {
+    &__icon {
+      top: 10%;
+      right: 25%;
+      font-size: 6vw;
+    }
+
+    &__text {
+      display: none;
+    }
+  }
+}

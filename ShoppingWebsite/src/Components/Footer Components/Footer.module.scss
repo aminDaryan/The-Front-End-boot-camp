@@ -1,0 +1,78 @@
+.container {
+  background-color: #232f3e;
+  position: relative;
+
+  &__goToTop {
+    position: relative;
+    height: 3vw;
+    background-color: #37475a;
+    text-align: center;
+    &__button {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: transparent;
+      color: white;
+      border: none;
+      font-size: 0.8vw;
+      font-family: Shabnam;
+      cursor: pointer;
+
+      &:hover{
+          background-color: lighten($color: #37475a, $amount: 5%);
+      }
+    }
+  }
+
+  &__main_footer {
+    &__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 5vw;
+      height: 15vw;
+      margin: 0 18vw 0 18vw;
+      padding-top: 1vw;
+      border-bottom: 0.025vw solid lighten($color: #232f3e, $amount: 10%);
+
+      &__information_columns {
+        &__list {
+          list-style-type: none;
+          padding: 0;
+
+          &__list_header {
+            color: #dddddd;
+            font-size: 1.2vw;
+          }
+
+          &__list_items {
+            margin: 1vw auto;
+            height: 1.5vw;
+
+            &__link {
+              text-decoration: none;
+              color: white;
+              display: inline-block;
+
+              &:hover {
+                border-bottom: 0.065vw solid white;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &__contact_info {
+      margin: 0 18vw;
+      &__text {
+        display: inline-block;
+        color: white;
+        font-size: 1vw;
+        padding-left: 1vw;
+      }
+    }
+  }
+}

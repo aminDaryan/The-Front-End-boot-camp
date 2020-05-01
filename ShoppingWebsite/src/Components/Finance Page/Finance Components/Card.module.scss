@@ -1,0 +1,231 @@
+// These are thevaribles
+$border_size: 0.065vw;
+$border_size-600px: 0.3vw;
+$border_color: lighten(
+  $color: #ccc,
+  $amount: 10%,
+);
+
+@mixin buttons {
+  background-color: white;
+  color: #0fabc6;
+  border: none;
+  border-top: $border_size solid $border_color;
+  border-bottom: $border_size solid $border_color;
+  padding: 0.2vw 0.3vw 0.1vw;
+  font-size: 1vw;
+  cursor: pointer;
+}
+
+@mixin buttons-600px {
+  border-top: $border_size-600px solid $border_color;
+  border-bottom: $border_size-600px solid $border_color;
+  padding: 0.2vw 0.3vw 0.1vw;
+  font-size: 5vw;
+}
+
+// This is the body of scss
+.card {
+  position: relative;
+  height: 15vw;
+  display: flex;
+
+  &__delete {
+    position: absolute;
+    top: 3%;
+    transition: 0.2s;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__image_container {
+    width: 23%;
+    height: 100%;
+    padding: 4vw 2vw 4vw 4vw;
+    box-sizing: border-box;
+
+    &__image {
+      height: 100%;
+      width: 100%;
+      object-fit: fill;
+    }
+  }
+
+  &__description {
+    position: relative;
+    width: 77%;
+    height: 100%;
+
+    &__name {
+      position: absolute;
+      top: 0%;
+
+      &__text {
+        font-size: 1.1vw;
+      }
+    }
+
+    &__adding_section {
+      position: absolute;
+      bottom: 10%;
+
+      &__adding {
+        @include buttons;
+        border-radius: 0 0.2vw 0.2vw 0;
+        border-right: $border_size solid $border_color;
+      }
+
+      &__number {
+        @include buttons;
+        width: 2vw;
+        font-size: 1vw;
+        box-sizing: border-box;
+        padding: 0.3vw 0.4vw 0.4vw;
+        color: black;
+        text-align: center;
+        transform: translateY(-0.3vw);
+        cursor: unset;
+
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+        &::placeholder {
+          text-align: center;
+        }
+      }
+
+      &__removing {
+        @include buttons;
+        border-radius: 0.2vw 0 0 0.2vw;
+        border-left: $border_size solid $border_color;
+      }
+
+      &__subtracting {
+        @include buttons;
+        border-radius: 0.2vw 0 0 0.2vw;
+        border-left: $border_size solid $border_color;
+      }
+    }
+
+    &__price_section {
+      // &__off_price {
+      //   position: absolute;
+      //   bottom: 20%;
+      //   left: 0%;
+
+      //   span {
+      //     font-size: 0.8vw;
+      //     padding: 0.2vw;
+      //     color: red;
+      //   }
+      // }
+
+      &__actual_price {
+        position: absolute;
+        bottom: 10%;
+        left: 0%;
+
+        span {
+          font-size: 0.8vw;
+          padding: 0.2vw;
+        }
+
+        &__price {
+          font-size: 1.2vw !important;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  svg {
+    font-size: 5vw !important;
+  }
+
+  .card {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    &__delete {
+      top: 3%;
+      right: 5%;
+      font-size: 7vw;
+    }
+
+    &__image_container {
+      width: 100%;
+    }
+
+    &__description {
+      width: 100%;
+
+      &__name {
+        right: 5%;
+        width: 90%;
+        &__text {
+          text-align: justify;
+          font-size: 5vw;
+        }
+      }
+
+      &__adding_section {
+        bottom: 10%;
+        right: 5%;
+
+        &__adding {
+          @include buttons-600px;
+          border-radius: 0 0.2vw 0.2vw 0;
+          border-right: $border_size-600px solid $border_color;
+        }
+
+        &__number {
+          @include buttons-600px;
+          width: 7vw;
+          font-size: 5vw;
+          padding: 0.3vw 0.4vw 0.35vw;
+          transform: translateY(-0.35vw);
+        }
+
+        &__removing {
+          @include buttons-600px;
+          border-radius: 0.2vw 0 0 0.2vw;
+          border-left: $border_size-600px solid $border_color;
+        }
+
+        &__subtracting {
+          @include buttons-600px;
+          border-radius: 0.2vw 0 0 0.2vw;
+          border-left: $border_size-600px solid $border_color;
+        }
+      }
+
+      &__price_section {
+        &__actual_price {
+          position: absolute;
+          bottom: 10%;
+          left: 5%;
+
+          span {
+            font-size: 5vw;
+            padding-right: 2vw;
+          }
+
+          &__price {
+            span {
+              font-size: 6vw !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

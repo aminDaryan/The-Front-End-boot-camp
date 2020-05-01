@@ -1,0 +1,206 @@
+// These are the varibles
+$sub-header: lighten(
+  $color: #000000,
+  $amount: 40%,
+);
+
+$border-color: lighten(
+  $color: #000000,
+  $amount: 80%,
+);
+
+$properties: lighten(
+  $color: #ccc,
+  $amount: 18%,
+);
+
+@mixin properties {
+    background-color: $properties;
+    font-family: shabnam;
+    padding: 1vw;
+    font-size: 0.9vw;
+    border-radius: 0.2vw;
+
+}
+
+@mixin properties-600px {
+    background-color: $properties;
+    font-family: shabnam;
+    padding: 2vw;
+    font-size: 3vw;
+    border-radius: 1vw;
+
+}
+
+// This is the body of scss
+.text {
+  padding: 0 2vw 2vw;
+
+  &__sub_header {
+    font-family: shabnam;
+    font-size: 1.5vw;
+    color: $sub-header;
+    margin-bottom: 2vw;
+  }
+
+  &__description{
+      position: relative;
+      display: inline-block;
+      text-align: justify;
+
+    &::after {
+      content: "";
+      width: 0;
+      height: 100%;
+      position: absolute;
+      border: 0.065vw solid $border-color;
+      top: 0;
+      right: -1vw;
+    }
+  }
+
+  &__grid{
+      display: grid;
+      grid-template-columns: 20% 80%;
+      grid-template-rows: repeat(2, 1fr);
+      column-gap: 1vw;
+      row-gap: 1vw;
+
+      &__item1{
+          @include properties;
+      }
+
+      &__item2{
+          @include properties;
+      }
+
+      &__item3{
+          @include properties;
+      }
+
+      &__item4{
+          @include properties;
+      }
+
+      &__item5{
+          @include properties;
+      }
+
+      &__item6{
+          @include properties;
+      }
+
+      &__item7{
+          @include properties;
+      }
+
+      &__item8{
+          @include properties;
+      }
+
+      &__item9{
+          @include properties;
+      }
+
+      &__item10{
+          @include properties;
+      }
+
+      &__item11{
+          @include properties;
+      }
+
+      &__item12{
+          @include properties;
+      }
+
+      &__item13{
+          @include properties;
+      }
+
+      &__item14{
+          @include properties;
+      }
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+    
+.text {
+    &__sub_header {
+      font-size: 8vw;
+      margin-bottom: 7vw;
+    }
+  
+    &__description{
+        font-size: 5vw;
+
+      &::after {
+        border: 0.15vw solid $border-color;
+        right: -2vw;
+      }
+    }
+  
+    &__grid{
+        column-gap: 3vw;
+        row-gap: 3vw;
+  
+        &__item1{
+            @include properties-600px ;
+        }
+  
+        &__item2{
+            @include properties-600px ;
+        }
+  
+        &__item3{
+            @include properties-600px ;
+        }
+  
+        &__item4{
+            @include properties-600px ;
+        }
+  
+        &__item5{
+            @include properties-600px ;
+        }
+  
+        &__item6{
+            @include properties-600px ;
+        }
+  
+        &__item7{
+            @include properties-600px ;
+        }
+  
+        &__item8{
+            @include properties-600px ;
+        }
+  
+        &__item9{
+            @include properties-600px ;
+        }
+  
+        &__item10{
+            @include properties-600px ;
+        }
+  
+        &__item11{
+            @include properties-600px ;
+        }
+  
+        &__item12{
+            @include properties-600px ;
+        }
+  
+        &__item13{
+            @include properties-600px ;
+        }
+  
+        &__item14{
+            @include properties-600px ;
+        }
+    }
+  }
+  }

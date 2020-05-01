@@ -1,0 +1,64 @@
+.container {
+  display: flex;
+  min-height: 20vw;
+  margin: 10vw 6vw 5vw;
+  border-top: 0.065vw solid #ccc;
+
+  &__cards {
+    position: relative;
+    width: 75%;
+    margin: 2vw 0;
+
+    &__header {
+      position: absolute;
+      top: -5vw;
+    }
+
+    &__list {
+      border-radius: 0.3vw;
+      background-color: white;
+      padding: 0 1vw;
+
+      &__card {
+        border-bottom: 0.065vw solid #ccc;
+      }
+    }
+  }
+
+  &__bill {
+    position: relative;
+    width: 25%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin: 22vh 6vw 80vh;
+    border-top: 0.2vw solid #ccc;
+
+    &__cards {
+      width: 100%;
+
+      &__header {
+        top: -10vw;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 8vw;
+      }
+
+      &__list {
+        border-radius: 1vw;
+
+        &__card {
+          border-bottom: 0.2vw solid #ccc;
+        }
+      }
+    }
+
+    &__bill {
+      width: 100%;
+    }
+  }
+}

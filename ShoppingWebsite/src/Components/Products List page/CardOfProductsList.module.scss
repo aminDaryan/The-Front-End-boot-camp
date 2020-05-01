@@ -1,0 +1,188 @@
+// These are the varibles
+@mixin adding_button {
+  position: absolute;
+  right: 0;
+  background-color: #f0b90b;
+  border-radius: 0.2vw;
+  height: 100%;
+  color: white;
+  cursor: pointer;
+}
+// THis is the body of scss
+.card {
+  position: relative;
+  height: 27vw;
+  width: 100%;
+  background-color: white;
+  border: 0.065vw solid #ccc;
+  box-shadow: 0 0 0vw 0vw rgba($color: #000000, $alpha: 0.15);
+  transition: 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 0 1vw 0vw rgba($color: #000000, $alpha: 0.15);
+    z-index: 10;
+  }
+
+  &__link {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    height: 100%;
+    width: 100%;
+
+    &__image_container {
+      height: 60%;
+      width: 100%;
+      padding: 2vw 2vw 1vw 2vw;
+      box-sizing: border-box;
+      transition: 0.2s;
+
+      &__image {
+        height: 100%;
+        width: 100%;
+        object-fit: fill;
+      }
+    }
+
+    &__text {
+      &__name {
+        position: absolute;
+        top: 60%;
+        right: 3.5%;
+        height: 1.2vw;
+        width: 17vw;
+        overflow: hidden;
+        font-size: 1vw;
+        direction: ltr;
+        text-align: justify;
+      }
+
+      // &__off_price {
+      //   direction: ltr;
+      //   position: absolute;
+      //   font-size: 1.2vw;
+      //   top: 68%;
+      //   left: 28%;
+      //   color: #ccc;
+      //   text-decoration: line-through;
+      // }
+
+      // &__off {
+      //   direction: ltr;
+      //   position: absolute;
+      //   top: 69%;
+      //   left: 10%;
+      //   color: white;
+      //   background-color: #FB3449;
+      //   border-radius: 0.8vw;
+      //   padding: 0.1vw 0.6vw
+      // }
+
+      &__toman {
+        position: absolute;
+        top: 75%;
+        left: 3.5%;
+      }
+
+      &__price {
+        direction: ltr;
+        position: absolute;
+        top: 73.5%;
+        left: 17.5%;
+      }
+    }
+  }
+
+  &__adding {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 85%;
+    right: 10%;
+    height: 2vw;
+    width: 12%;
+    overflow: hidden;
+    border-radius: 0.2vw;
+    z-index: 1;
+
+    &:hover {
+      width: 50%;
+    }
+
+    &:hover &__text {
+      transform: translateX(-1.8vw);
+    }
+
+    &__button {
+      @include adding_button;
+      padding: 0.15vw 0.3vw 0;
+      border: none;
+      z-index: 1;
+    }
+
+    &__text {
+      display: inline-block;
+      @include adding_button;
+      padding: 0.25vw 0.5vw 0 0.5vw;
+      box-sizing: border-box;
+      transition: 0.2s;
+      transform-origin: right;
+      transform: translateX(4.6vw);
+      z-index: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .card {
+    height: 90vh;
+    border: 0.3vw solid #ccc;
+    border-radius: 1vw;
+
+    &__link {
+      &__text {
+        &__name {
+          height: 7vw;
+          width: 92%;
+          font-size: 5vw;
+        }
+
+        &__toman {
+          font-size: 5vw;
+        }
+
+        &__price {
+          top: 77%;
+          left: 20.5%;
+          span {
+            font-size: 7vw !important;
+          }
+        }
+      }
+    }
+
+    &__adding {
+      height: 10vw;
+      width: 50%;
+      border-radius: 1vw;
+      z-index: 1;
+
+      &__button {
+        padding-top: 0.5vh;
+        svg{
+          font-size: 8vw !important;
+        }
+      }
+
+      &__text {
+       width: 100%;
+       padding: 1.2vh 10vh 0 0;
+       font-size: 4vw;
+      }
+    }
+  }
+}

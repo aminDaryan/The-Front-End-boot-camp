@@ -1,0 +1,281 @@
+.container {
+  display: flex;
+  align-items: flex-start;
+  position: absolute;
+  top: 2vw;
+  left: 0;
+  height: 88.5%;
+
+  &__bill {
+    position: sticky;
+    top: 10vw;
+    height: 16vw;
+    width: 20vw;
+    border-radius: 0.3vw;
+    background-color: white;
+    padding: 1vw;
+    box-sizing: border-box;
+
+    &__sum_of_prices {
+      position: relative;
+      height: 7.5vw;
+      border-bottom: 0.065vw solid lighten($color: #ccc, $amount: 10%);
+
+      &__total_products {
+        &__text {
+          position: absolute;
+          top: 0.6vw;
+          font-size: 0.9vw;
+          color: #777777;
+        }
+
+        &__price {
+          position: absolute;
+          top: 0.3vw;
+          left: 2.3vw;
+          font-size: 1.1vw;
+          color: #777777;
+        }
+
+        &__toman {
+          position: absolute;
+          top: 0.7vw;
+          left: 0;
+          font-size: 0.8vw;
+          color: #777777;
+        }
+      }
+
+      &__off {
+        &__text {
+          position: absolute;
+          top: 3vw;
+          font-size: 0.9vw;
+          color: #777777;
+        }
+
+        &__price {
+          position: absolute;
+          top: 2.7vw;
+          left: 2.3vw;
+          font-size: 1.1vw;
+          color: red;
+        }
+
+        &__toman {
+          position: absolute;
+          top: 3vw;
+          left: 0;
+          font-size: 0.8vw;
+          color: red;
+        }
+      }
+
+      &__delivary {
+        &__text {
+          position: absolute;
+          top: 5.4vw;
+          font-size: 0.9vw;
+          color: #777777;
+        }
+
+        &__price {
+          position: absolute;
+          top: 5.1vw;
+          left: 2.3vw;
+          font-size: 1.1vw;
+          color: #777777;
+        }
+
+        &__toman {
+          position: absolute;
+          top: 5.4vw;
+          left: 0;
+          font-size: 0.8vw;
+          color: #777777;
+        }
+      }
+    }
+
+    &__total_price {
+      position: relative;
+      height: 3vw;
+
+      &__text {
+        position: absolute;
+        top: 1vw;
+        font-size: 0.9vw;
+        font-weight: 700;
+      }
+
+      &__price {
+        position: absolute;
+        top: 0.7vw;
+        left: 2.3vw;
+        font-size: 1.1vw;
+        font-weight: 700;
+      }
+
+      &__toman {
+        position: absolute;
+        top: 1.1vw;
+        left: 0;
+        font-size: 0.8vw;
+        font-weight: 700;
+      }
+    }
+
+    &__purchase {
+      position: relative;
+      height: 4vw;
+
+      &__button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 3vw;
+        width: 18.5vw;
+        background-color: #f0b90b;
+        border: none;
+        border-radius: 0.5vw;
+        font-size: 1.3vw;
+        font-family: shabnam;
+        cursor: pointer;
+
+        &:hover {
+          background: linear-gradient(#f7cf50, #f0b90b 80%);
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    height: 100%;
+    width: 100%;
+
+    &__bill {
+      position: relative;
+      top: 0vw;
+      height: 70vh;
+      width: 100%;
+      border-radius: 1vw;
+
+      &__sum_of_prices {
+        position: relative;
+        height: 30vh;
+        border-bottom: 0.065vw solid lighten($color: #ccc, $amount: 10%);
+
+        &__total_products {
+          &__text {
+            top: 3vh;
+            right: 5%;
+            font-size: 6vw;
+          }
+
+          &__price {
+            top: 3vh;
+            left: 20%;
+            span {
+              font-size: 6vw !important;
+            }
+          }
+
+          &__toman {
+            top: 3.5vh;
+            left: 5%;
+            font-size: 5vw;
+          }
+        }
+
+        &__off {
+          &__text {
+            right: 5%;
+            top: 10vh;
+            font-size: 6vw;
+          }
+
+          &__price {
+            position: absolute;
+            top: 10vh;
+            left: 20%;
+
+            span {
+              font-size: 6vw !important;
+            }
+          }
+
+          &__toman {
+            position: absolute;
+            top: 10.5vh;
+            left: 5%;
+            font-size: 5vw;
+          }
+        }
+
+        &__delivary {
+          &__text {
+            top: 17vh;
+            right: 5%;
+            font-size: 6vw;
+          }
+
+          &__price {
+            top: 17vh;
+            left: 20%;
+
+            span {
+              font-size: 6vw !important;
+            }
+          }
+
+          &__toman {
+            top: 17.5vh;
+            left: 5%;
+            font-size: 5vw;
+          }
+        }
+      }
+
+      &__total_price {
+        height: 20vh;
+
+        &__text {
+          top: 4vh;
+          left: 50%;
+          font-size: 6vw;
+          transform: translate(-50%, -50%);
+        }
+
+        &__price {
+          top: 15vh;
+          left: 50%;
+          transform: translate(-50%, -50%);
+
+          span {
+            font-size: 8vw !important;
+          }
+        }
+
+        &__toman {
+          top: 13vh;
+          left: 10%;
+          font-size: 5vw;
+        }
+      }
+
+      &__purchase {
+        height: 20vh;
+
+        &__button {
+          height: 9vh;
+          width: 80vw;
+          border-radius: 3vw;
+          font-size: 6vw;
+        }
+      }
+    }
+  }
+}

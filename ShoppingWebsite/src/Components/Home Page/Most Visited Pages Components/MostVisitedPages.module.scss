@@ -1,0 +1,75 @@
+// These are the varibles
+$border_radius: 0.3vw;
+// This is the body of the scss
+.container {
+  border-top: 0.065vw solid rgba($color: #000000, $alpha: 0.1);
+
+  &__cards_container {
+    display: flex;
+    justify-content: space-evenly;
+    height: 10vw;
+    margin: 4vw 0 8vw 0;
+
+    &__card {
+      position: relative;
+      height: 12vw;
+      width: 20vw;
+      text-align: center;
+      background-color: white;
+      border: 0.06vw solid rgba($color: #000000, $alpha: 0.4);
+      border-radius: $border_radius;
+
+      &:hover &__link__text_box {
+        opacity: 0;
+      }
+
+      &:hover &__link__image {
+        opacity: 1;
+      }
+
+      &__link {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        overflow: hidden;
+
+        &__image {
+          position: absolute;
+          top: 0;
+          right: 0;
+          height: 100%;
+          width: 100%;
+          object-fit: fill;
+          border-radius: $border_radius;
+          opacity: 0.1;
+          z-index: 1;
+          transition: 0.2s;
+        }
+
+        &__text_box {
+          position: relative;
+          height: 100%;
+          width: 100%;
+          transition: 0.2s;
+          z-index: 100;
+          &__text {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: black;
+            font-size: 1.8vw;
+            font-weight: 900;
+          }
+        }
+      }
+    }
+  }
+
+  &__header {
+    text-align: center;
+  }
+}

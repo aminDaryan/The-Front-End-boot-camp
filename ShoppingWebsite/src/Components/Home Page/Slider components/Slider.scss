@@ -1,0 +1,69 @@
+// These are the varibles
+$slider_height: 40.6vw;
+$slider_height-600px: 96vh;
+// This is the body of scss
+.slider {
+  direction: ltr;
+  margin: 0vw 0vw 0vw 0vw;
+  position: relative;
+  z-index: 1;
+  &__link {
+    position: absolute;
+    top: 0;
+    left: 4.5vw;
+    display: block;
+    height: $slider_height;
+    width: 90vw;
+    z-index: 9;
+    &__image {
+      position: absolute;
+      left: -4.5vw;
+      height: $slider_height;
+      width: 100vw;
+      object-fit: fill !important;
+    }
+  }
+}
+.awssld__wrapper {
+  height: $slider_height !important;
+}
+.awssld__content {
+  img {
+    object-fit: fill !important;
+  }
+}
+.awssld__bullets {
+  bottom: 0.65vw !important;
+  z-index: 5 !important;
+}
+
+.awssld__bullets button {
+  width: 0.7vw !important;
+  height: 0.7vw !important;
+  background-color: lighten($color: #232f3e, $amount: 80%) !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .slider {
+    height: min-content;
+    &__link {
+      height: $slider_height-600px;
+      &__image {
+        width: 100vw;
+        height: $slider_height-600px;
+      }
+    }
+  }
+  .awssld__wrapper {
+    height: $slider_height-600px !important;
+  }
+  .awssld__bullets {
+    bottom: 4vw !important;
+    z-index: 5 !important;
+  }
+
+  .awssld__bullets button {
+    width: 4vw !important;
+    height: 4vw !important;
+  }
+}

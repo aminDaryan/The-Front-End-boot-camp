@@ -1,0 +1,114 @@
+.card {
+  position: relative;
+  height: 23vw;
+  width: 100%;
+  border-radius: 2%;
+  background-color: white;
+  transition: 0.2s;
+
+  &:hover &__image_container {
+    transform: scale(1.1);
+  }
+  &:hover {
+    box-shadow: 0 0 0.3vw 0.03vw rgba($color: #000000, $alpha: 0.2);
+  }
+
+  &__image_container {
+    height: 55%;
+    width: 100%;
+    padding: 1vw 2vw;
+    box-sizing: border-box;
+    transition: 0.2s;
+
+    &__image {
+      height: 100%;
+      width: 100%;
+      object-fit: fill;
+    }
+  }
+
+  &__text {
+    &__name {
+      position: absolute;
+      top: 50%;
+      right: 10%;
+      width: 12.8vw;
+      font-size: 0.85vw;
+      text-align: justify;
+    }
+
+    // &__off_price {
+    //   direction: ltr;
+    //   position: absolute;
+    //   font-size: 1.2vw;
+    //   top: 68%;
+    //   left: 28%;
+    //   color: #ccc;
+    //   text-decoration: line-through;
+    // }
+
+    // &__off {
+    //   direction: ltr;
+    //   position: absolute;
+    //   top: 69%;
+    //   left: 10%;
+    //   color: white;
+    //   background-color: #FB3449;
+    //   border-radius: 0.8vw;
+    //   padding: 0.1vw 0.6vw
+    // }
+
+    &__toman {
+      position: absolute;
+      top: 80%;
+      left: 10%;
+    }
+
+    &__price {
+      direction: ltr;
+      position: absolute;
+      top: 76%;
+      left: 27%;
+      font-size: 1.5vw;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .card {
+    height: 75vh;
+
+    &:hover &__image_container {
+      transform: none;
+    }
+  
+    &__image_container {
+      height: 65%;
+    }
+
+    &__text {
+      &__name {
+        top: 65%;
+        height: 5vh;
+        width: 50vw;
+        font-size: 6vw;
+        overflow: hidden;
+      }
+
+      &__toman {
+        top: 80%;
+        left: 15%;
+        font-size: 7vw;
+      }
+
+      &__price {
+        top: 84%;
+        left: 45%;
+
+        span {
+          font-size: 7vw !important;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,167 @@
+// these are the varibles
+@mixin information-grid {
+  padding: 1vw 2vw;
+  border: 0.065vw solid #ccc;
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    color: lighten($color: #000000, $amount: 70%);
+    padding: 0.5vw 0;
+    font-size: 0.9vw;
+  }
+  &__text {
+    color: lighten($color: #000000, $amount: 50%);
+    font-size: 1.3vw;
+  }
+}
+
+@mixin information-grid-600px {
+  padding: 1vw 2vw;
+  border: 0.2vw solid #ccc;
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    color: lighten($color: #000000, $amount: 70%);
+    padding: 2vw 0;
+    font-size: 4.5vw;
+  }
+  &__text {
+    color: lighten($color: #000000, $amount: 50%);
+    font-size: 5vw;
+    margin-right: 10vw;
+    span {
+      font-size: 5vw !important;
+    }
+  }
+}
+
+@mixin edit-button {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border: none;
+  font-family: shabnam;
+}
+// This is the body of scss
+.container {
+  margin-top: 6.8vw;
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  padding: 2vw;
+
+  &__side_bar {
+    width: 20%;
+  }
+
+  &__main {
+    width: 80%;
+
+    &__profile_information {
+      border: 0.065vw solid #ccc;
+      &__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 7vw);
+        background-color: white;
+
+        &__user_name {
+          @include information-grid;
+          margin: -0.065vw -0.065vw 0 0;
+        }
+
+        &__email {
+          @include information-grid;
+          margin: -0.065vw 0 0 -0.065vw;
+        }
+
+        &__phone {
+          @include information-grid;
+          margin: 0 -0.065vw 0 0;
+        }
+
+        &__address {
+          @include information-grid;
+          margin: 0 0 0 -0.065vw;
+        }
+      }
+
+      &__edit {
+        height: 3vw;
+
+        &__button {
+          @include edit-button;
+          color: #f0b90b;
+          cursor: pointer;
+        }
+
+        &__button_error {
+          @include edit-button;
+          color: red;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    margin: 15vh 5vw;
+    min-height: 68vh;
+    flex-direction: column;
+    justify-content: start;
+    padding: 2vw;
+
+    &__side_bar {
+      width: 100%;
+    }
+
+    &__main {
+      width: 100%;
+
+      &__profile_information {
+        border: 0.2vw solid #ccc;
+        &__grid {
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
+          grid-template-rows: repeat(4, 17vh);
+          background-color: white;
+
+          &__user_name {
+            @include information-grid-600px;
+            margin: 0;
+          }
+
+          &__email {
+            @include information-grid-600px;
+            margin: 0;
+          }
+
+          &__phone {
+            @include information-grid-600px;
+            margin: 0;
+          }
+
+          &__address {
+            @include information-grid-600px;
+            margin: 0;
+          }
+        }
+
+        &__edit {
+          height: 15vh;
+
+          &__button {
+           font-size: 5vw;
+          }
+
+          &__button_error {
+           font-size: 5vw;
+          }
+        }
+      }
+    }
+  }
+}

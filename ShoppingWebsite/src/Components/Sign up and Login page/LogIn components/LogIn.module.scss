@@ -1,0 +1,214 @@
+// These are the variables
+$light_orange: lighten(#f0b90b, 15%);
+
+// This is the scss body
+.logIn_page {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  height: 100vh;
+  width: 100vw;
+  margin-top: -6.4vw;
+  background-color: #fafafa;
+  z-index: 1000;
+
+  &__logIn_box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-shadow: 0 0.1vw 0.5vw 0vw rgba($color: #000000, $alpha: 0.1);
+    border-radius: 0.1vw;
+    height: 24vw;
+    width: 28vw;
+    text-align: center;
+
+    &__header {
+      position: absolute;
+      left: 50%;
+      top: 10%;
+      transform: translate(-50%, -50%);
+
+      &__text {
+        font-size: 2.2vw;
+      }
+    }
+
+    &__logIn_button {
+      position: absolute;
+      left: 11%;
+      top: 67%;
+    }
+
+    &__forgot_password {
+      position: absolute;
+      left: 65%;
+      top: 84%;
+
+      &__link {
+        text-decoration: none;
+        color: #f0b90b;
+      }
+    }
+
+    &__register {
+      position: absolute;
+      left: 9%;
+      top: 84%;
+
+      &__link {
+        text-decoration: none;
+        color: #f0b90b;
+        margin: 0 0.5vw;
+      }
+    }
+
+    &__password_box {
+      position: absolute;
+      left: 46%;
+      top: 49%;
+      width: 100%;
+      transform: translate(-50%, -50%);
+      padding: 1vw;
+      box-sizing: border-box;
+
+      &__responsive {
+        display: none;
+      }
+    }
+    &__email_box {
+      position: absolute;
+      left: 46%;
+      top: 25%;
+      width: 100%;
+      transform: translate(-50%, -50%);
+      padding: 1vw;
+      box-sizing: border-box;
+
+      &__responsive {
+        display: none;
+      }
+    }
+
+    &__error_box {
+      position: absolute;
+      left: 50%;
+      top: 61%;
+      transform: translate(-50%, -50%);
+      box-sizing: border-box;
+      color: red;
+      border-radius: 0.2vw;
+
+      &__text {
+        margin: 0;
+        padding: 0.2vw;
+        width: 11vw;
+        font-size: 0.8vw;
+      }
+    }
+  }
+}
+
+.link {
+  display: inline-block;
+  width: 21.8vw;
+  height: 2.7vw;
+  text-decoration: none;
+  background-color: #f0b90b;
+
+  &__submit {
+    width: 21.8vw;
+    height: 2.7vw;
+    background-color: #f0b90b;
+    border: none;
+    border-radius: 0.3vw;
+    font-size: 1.2vw;
+    font-family: shabnam;
+    cursor: pointer;
+
+    &:hover {
+      background: linear-gradient($light_orange, #f0b90b 80%);
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .logIn_page {
+    span {
+      font-size: 4vw;
+    }
+    div {
+      font-size: 4vw;
+    }
+
+    height: 100vh;
+    width: 100vw;
+
+    &__logIn_box {
+      top: 50%;
+      left: 50%;
+      border-radius: 1vw;
+      height: 90vh;
+      width: 90vw;
+
+      &__header {
+        &__text {
+          font-size: 11vw !important;
+        }
+      }
+
+      &__text {
+        font-size: 5vw;
+      }
+
+      &__password_box {
+        &__responsive {
+          display: block;
+        }
+
+        &__normal {
+          display: none;
+        }
+      }
+      &__email_box {
+        &__responsive {
+          display: block;
+        }
+
+        &__normal {
+          display: none;
+        }
+      }
+
+      &__forgot_password {
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &__register {
+        left: 50%;
+        top: 92%;
+        transform: translate(-50%, -50%);
+
+        &__link {
+          text-decoration: none;
+          color: #f0b90b;
+          margin: 0 0.5vw;
+        }
+      }
+    }
+  }
+
+  .link {
+    width: 70vw;
+    height: 9vh;
+
+    &__submit {
+      width: 70vw;
+      height: 9vh;
+      border-radius: 2vw;
+      font-size: 5vw;
+    }
+  }
+}

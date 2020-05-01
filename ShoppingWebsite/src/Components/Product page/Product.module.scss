@@ -1,0 +1,230 @@
+// These are the varibles
+@mixin short-description {
+  position: absolute;
+  right: 3%;
+}
+
+$border-color: lighten(
+  $color: #ccc,
+  $amount: 12%,
+);
+
+// This is the body of scss
+.container {
+  margin: 9vw 3vw;
+
+  &__product_in_general {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5vw;
+    background-color: white;
+    border: 0.065vw solid #ccc;
+    border-radius: 0.2vw;
+    padding: 1vw;
+    height: 30vw;
+
+    &__image_container {
+      width: 30%;
+      padding: 1vw 1vw 1vw 2vw;
+      border-left: 0.065vw solid $border-color;
+
+      &__image {
+        width: 100%;
+      }
+    }
+
+    &__short_description_container {
+      position: relative;
+      width: 50%;
+      height: 100%;
+
+      &__name {
+        @include short-description;
+        top: 5%;
+        font-size: 1.2vw;
+
+        &::after {
+          position: absolute;
+          top: 110%;
+          right: 0;
+          background-color: $border-color;
+          content: "";
+          display: inline-block;
+          height: 0.065vw;
+          vertical-align: middle;
+          width: 41.5vw;
+        }
+      }
+
+      &__brand {
+        @include short-description;
+        top: 25%;
+      }
+
+      &__color_container {
+        @include short-description;
+        top: 35%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &__color {
+          display: inline-block;
+          height: 1vw;
+          width: 1vw;
+          border: 0.065vw solid #ccc;
+          border-radius: 50%;
+          box-sizing: border-box;
+          margin: 0.5vw;
+        }
+      }
+    }
+
+    &__purchase {
+      position: relative;
+      height: 10vw;
+      width: 20%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f5f5f5;
+      border: 0.065vw solid #ccc;
+      border-radius: 0.2vw;
+      padding: 1vw;
+
+      &__price {
+        position: relative;
+        width: 60%;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 5vw;
+
+        &::after {
+          position: absolute;
+          top: 120%;
+          right: -17.5%;
+          background-color: #ccc;
+          content: "";
+          display: inline-block;
+          height: 0.065vw;
+          vertical-align: middle;
+          width: 120%;
+        }
+      }
+
+      &__button {
+        position: absolute;
+        top: 70%;
+        right: 50%;
+        transform: translate(50%, -50%);
+        height: 3.5vw;
+        width: 17vw;
+        background-color: #ef394e;
+        color: white;
+        border: none;
+        border-radius: 0.5vw;
+        font-size: 1.2vw;
+        font-family: shabnam;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__description {
+  }
+}
+
+.loading {
+  background-color: white;
+  height: 39vh;
+  width: 100%;
+  text-align: center;
+  padding-top: 19vh;
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    margin: 15vh 3vw;
+
+    &__product_in_general {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 15vh;
+      padding: 1vw;
+      height: 130vh;
+
+      &__image_container {
+        width: 100%;
+      }
+
+      &__short_description_container {
+        width: 100%;
+        height: 40vh;
+
+        &__name {
+          font-size: 5vw;
+
+          &::after {
+            height: 0.15vw;
+            width: 86vw;
+          }
+        }
+
+        &__brand {
+          font-size: 4vw;
+          top: 55%;
+        }
+
+        &__color_container {
+          font-size: 4vw;
+          top: 75%;
+
+          &__color {
+            height: 4vw;
+            width: 4vw;
+            border: 0.15vw solid #ccc;
+            margin-right: 3vw;
+          }
+        }
+      }
+
+      &__purchase {
+        position: relative;
+        width: 70%;
+        height: 20vh;
+        background-color: white;
+
+        &__price {
+          position: absolute;
+          top: 0%;
+          width: 60%;
+          font-weight: 700;
+          text-align: center;
+          margin-bottom: 5vw;
+          font-size: 5vw;
+
+          span {
+            font-size: 5vw !important;
+          }
+
+          &::after {
+            right: -10%;
+            height: 0.15vw;
+          }
+        }
+
+        &__button {
+          top: 70%;
+          height: 12vh;
+          width: 50vw;
+          border-radius: 2vw;
+          font-size: 5vw;
+        }
+      }
+    }
+
+    &__description {
+    }
+  }
+}

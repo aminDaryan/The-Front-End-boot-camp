@@ -1,0 +1,698 @@
+// These are the variables
+@mixin second_row_navBar {
+  grid-row: 2;
+  color: lighten($color: black, $amount: 80%);
+  font-size: 0.85vw;
+  margin-top: 1vw;
+  text-align: center;
+  padding: 0.2vw;
+  cursor: pointer;
+  &:hover {
+    border: 0.065vw solid darken($color: gray, $amount: 20%);
+    border-radius: 0.1vw;
+  }
+}
+
+@mixin side_bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+  display: none;
+}
+
+@mixin main_menu {
+  position: relative;
+  height: 100%;
+  width: 22.8%;
+  background-color: #f5f5f5;
+}
+
+@mixin list_items_style {
+  position: relative;
+  padding: 1vw 2vw;
+  margin: 0;
+  transition: 0.2s;
+  border-radius: 0 0.3vw 0.3vw 0;
+  cursor: pointer;
+
+  &:hover {
+    background-color: white;
+  }
+}
+
+@mixin list_of_menu_style {
+  list-style-type: none;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0;
+  height: 100vh;
+}
+
+@mixin list_items_header {
+  position: relative;
+  padding: 1vw 2vw;
+  margin: 0;
+  font-weight: 500;
+  color: rgba($color: black, $alpha: 0.6);
+}
+
+@mixin not_menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 77%;
+  z-index: 1000;
+  display: none;
+}
+
+@mixin search_button {
+  height: 100%;
+  width: 100%;
+  border: none;
+  border-radius: 0.3vw 0 0 0.3vw;
+  background-color: #febd69;
+  font-size: 1.2vw;
+}
+
+// This is the body of scss
+.navBar {
+  position: fixed;
+  top: 0;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(200, 1fr);
+  grid-template-rows: repeat(2, 2.4vw);
+  background-color: #232f3e;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8vw;
+  z-index: 1000;
+
+  &__menu {
+    grid-column: 1 / 7;
+    border: 0.065vw solid gray;
+    border-radius: 0.15vw;
+    margin: 0 auto;
+    padding: 0.3vw 0.2vw;
+
+    &__button {
+      color: white;
+      font-size: 1.8vw;
+      background-color: transparent;
+      border: none;
+      transition: 0.4s;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+
+    &__sideBar {
+      @include side_bar;
+      animation: wholePageGoDark 0.2s ease-in forwards;
+
+      &__mainMenu {
+        @include main_menu;
+        animation: openSideMenu 0.2s ease-in forwards;
+
+        &__header {
+          position: absolute;
+          display: flex;
+          justify-content: space-between;
+          height: 3vw;
+          width: 100%;
+          background-color: #232f3e;
+          color: white;
+          padding: 0.7vw 2vw;
+          box-sizing: border-box;
+
+          &__button {
+            position: absolute;
+            top: 0.6vw;
+            left: 0.6vw;
+            font-size: 1.2vw;
+            color: white;
+            background-color: transparent;
+            border: none;
+            transition: 0.2s;
+            cursor: pointer;
+
+            &:hover {
+              transform: scale(1.1);
+            }
+          }
+        }
+
+        &__body {
+          position: absolute;
+          top: 3vw;
+          width: 100%;
+          overflow: hidden;
+          // _____________________________________________
+          &__list_of_main_menu {
+            @include list_of_menu_style;
+            &__listItems {
+              @include list_items_style;
+
+              &__angleLeft {
+                position: absolute;
+                top: 0.7vw;
+                left: 1.5vw;
+                font-size: 1.4vw;
+              }
+            }
+            &__listItemsHeader {
+              @include list_items_header;
+            }
+          }
+          // ______________________________________________
+          &__list_of_sub_menu {
+            @include list_of_menu_style;
+            position: absolute;
+            top: 0;
+            background-color: #f5f5f5;
+            animation: sub_menu_openning 0.2s forwards;
+
+            &__link {
+              text-decoration: none;
+              color: black;
+              &__listItems {
+                @include list_items_style;
+              }
+            }
+            &__listItemsHeader {
+              @include list_items_header;
+              display: flex;
+
+              &__arrow_to_back {
+                margin-left: 0.5vw;
+                opacity: 0.5;
+                &__button {
+                  background-color: transparent;
+                  border: none;
+                  font-size: 1.1vw;
+                  cursor: pointer;
+                }
+              }
+            }
+            &__under_line {
+              opacity: 0.5;
+              margin: 0;
+            }
+          }
+
+          &__list_of_sub_menu_closed {
+            @include list_of_menu_style;
+            position: absolute;
+            top: 0;
+            background-color: #f5f5f5;
+            animation: sub_menu_closing 0.2s forwards;
+          }
+          // ______________________________________________
+        }
+      }
+
+      &__notMenu {
+        @include not_menu;
+      }
+    }
+
+    &__sideBar_closed {
+      @include side_bar;
+      animation: wholePageGoLight 0.2s ease-in forwards;
+
+      &__mainMenu {
+        @include main_menu;
+        animation: closeSideMenu 0.2s ease-in forwards;
+      }
+
+      &__notMenu {
+        @include not_menu;
+      }
+    }
+  }
+
+  &__logo {
+    grid-column: 8 / 17;
+    height: 100%;
+    width: 100%;
+
+    &__image {
+      height: 170%;
+      width: 100%;
+      margin-top: -0.4vw;
+    }
+  }
+
+  &__searchBox {
+    grid-column: 22 / 145;
+    display: grid;
+    grid-template-columns: repeat(100, 1fr);
+    align-items: center;
+    height: 2.5vw;
+    margin-top: 0.1vw;
+    position: relative;
+
+    &__categories {
+      height: 2.5vw;
+      grid-column: 1 / 22;
+
+      &__button {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        border: none;
+        border-radius: 0 0.3vw 0.3vw 0;
+        font-family: Shabnam;
+        cursor: pointer;
+
+        &:hover {
+          background-color: darken(#f0f0f0, 10%);
+        }
+
+        &__angleDown {
+          position: absolute;
+          top: 0.7vw;
+          left: 0.5vw;
+          font-size: 1vw;
+        }
+
+        &__dropDown {
+          position: absolute;
+          top: 2.41vw;
+          right: -12.7vw;
+          width: 300%;
+          overflow: hidden;
+          z-index: 10;
+          transform-origin: top;
+          transform: scaleY(0);
+          transition: 0.2s;
+
+          &__list {
+            position: relative;
+            list-style-type: none;
+            padding: 1vw 0 1vw 0;
+            margin: 0 auto;
+            width: 12.6vw;
+            background-color: #f0f0f0;
+            border-radius: 0 0 0.2vw 0.2vw;
+            text-align: center;
+
+            &__listItems {
+              padding: 0.5vw 0 0.5vw 2vw;
+              margin: 0 2vw 0 0;
+              background-color: #f0f0f0;
+              border-radius: 0 0.2vw 0.2vw 0;
+              transition: 0.2s;
+              cursor: pointer;
+
+              &:hover {
+                margin: 0 0.5vw 0 0;
+                color: #f0b90b;
+                background-color: lighten(#f0f0f0, 10%);
+              }
+
+              &:hover &__sub_dropDown {
+                transform: scaleX(1);
+              }
+
+              &__sub_dropDown {
+                position: absolute;
+                top: 0;
+                left: -12vw;
+                height: 20vw;
+                padding: 1vw;
+                width: 10vw;
+                background-color: white;
+                transform: scaleX(0);
+                transform-origin: right;
+                color: black;
+
+                &__list {
+                  list-style-type: none;
+                  padding: 0;
+                  text-align: right;
+
+                  &__listItems {
+                    position: relative;
+                    padding: 0.5vw 0;
+
+                    &:hover {
+                      color: #f0b90b;
+                      border-bottom: 0.065vw solid #ccc;
+                    }
+
+                    &__angle_left {
+                      position: absolute;
+                      top: 0.5vw;
+                      left: 0.2vw;
+                      font-size: 1.1vw;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &__input {
+      height: 2.5vw;
+      grid-column: 22/95;
+      box-sizing: border-box;
+      border: none;
+    }
+
+    &__link {
+      display: block;
+      height: 100%;
+      grid-column: 95/100;
+
+      &__searchButton {
+        @include search_button;
+        cursor: pointer;
+
+        &:hover {
+          background-color: darken(#febd69, 10%);
+
+          & > i {
+            transform: scale(1.1);
+          }
+        }
+
+        i {
+          transition: 0.4s;
+        }
+      }
+
+      &__searchButton_off {
+        grid-column: 95/100;
+        @include search_button;
+      }
+    }
+  }
+  &__Profile {
+    grid-column: 160 / 180;
+    height: 100%;
+    border: 0.065vw solid gray;
+    border-radius: 0.3vw;
+  }
+  &__cart {
+    grid-column: 191 / 200;
+  }
+  &__aboutUs {
+    grid-column: 20 / 31;
+    @include second_row_navBar;
+  }
+  &__contactUs {
+    grid-column: 32 / 42;
+    @include second_row_navBar;
+  }
+  &__becomeASeller {
+    grid-column: 44 / 57;
+    @include second_row_navBar;
+  }
+  &__FAQ {
+    grid-column: 59 / 72;
+    @include second_row_navBar;
+  }
+}
+
+// This is for responsive
+
+@media only screen and (max-width: 600px) {
+  .navBar {
+    grid-template-rows: repeat(1, 15vw);
+
+    &__menu {
+      grid-column: 1 / 20;
+
+      &__button {
+        font-size: 8vw;
+      }
+
+      &__sideBar {
+        height: 100vh;
+
+        &__notMenu {
+          width: 0;
+        }
+
+        &__mainMenu {
+          width: 100%;
+          animation: openSideMenu-600px 0.2s ease-in forwards;
+
+          &__header {
+            height: 20vw;
+            padding: 3vw 42vw;
+
+            div {
+              font-size: 10vw;
+            }
+
+            &__button {
+              position: absolute;
+              top: 20%;
+              left: 5%;
+              font-size: 8vw;
+            }
+          }
+
+          &__body {
+            top: 8%;
+            // _____________________________________________
+            &__list_of_main_menu {
+              text-align: center;
+              font-size: 8vw;
+              &__listItems {
+                padding: 10vw;
+
+                div {
+                  font-size: 6vw;
+                }
+
+                &__angleLeft {
+                  position: absolute;
+                  top: 40%;
+                  left: 5%;
+                  font-size: 8vw;
+                }
+              }
+            }
+            // ______________________________________________
+            &__list_of_sub_menu {
+              margin-top: 8%;
+              animation: sub_menu_openning-600px 0.2s forwards;
+              text-align: center;
+
+              &__link {
+                &__listItems {
+                  padding: 10vw;
+
+                  div {
+                    font-size: 6vw;
+                  }
+                }
+              }
+              &__listItemsHeader {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                div {
+                  font-size: 8vw;
+                }
+
+                &__arrow_to_back {
+                  margin-left: 5%;
+                  &__button {
+                    font-size: 7vw;
+                  }
+                }
+              }
+            }
+
+            &__list_of_sub_menu_closed {
+              margin-top: 8%;
+              animation: sub_menu_closing-600px 0.2s forwards;
+            }
+            // ______________________________________________
+          }
+        }
+      }
+
+      &__sideBar_closed {
+        &__mainMenu {
+          width: 100%;
+          animation: closeSideMenu-600px 0.2s ease-in forwards;
+        }
+
+        &__notMenu {
+          width: 0;
+        }
+      }
+    }
+
+    
+  &__logo {
+    grid-column: 20 / 45;
+    height: 100%;
+    width: 100%;
+
+    &__image {
+      height: 100%;
+      width: 100%;
+      margin-top: 1.2vw;
+    }
+  }
+
+    &__searchBox {
+      grid-column: 45 / 155;
+      grid-template-columns: repeat(100, 1fr);
+      height: 8vw;
+      margin-top: 0.1vw;
+
+      &__categories {
+        display: none;
+      }
+
+      &__input {
+        height: 8vw;
+        grid-column: 1/85;
+        border-radius: 0 0.8vw 0.8vw 0;
+      }
+
+      &__link {
+        grid-column: 85/100;
+
+        &__searchButton {
+          border-radius: 0.8vw 0 0 0.8vw;
+          font-size: 5vw;
+        }
+
+        &__searchButton_off {
+          grid-column: 85/100;
+          border-radius: 0.8vw 0 0 0.8vw;
+          font-size: 5vw;
+        }
+      }
+    }
+    &__Profile {
+      grid-column: 160 / 180;
+      height: 60%;
+      border: none;
+    }
+    &__cart {
+      grid-column: 180 / 200;
+    }
+
+    &__aboutUs {
+      display: none;
+    }
+    &__contactUs {
+      display: none;
+    }
+    &__becomeASeller {
+      display: none;
+    }
+    &__FAQ {
+      display: none;
+    }
+  }
+}
+
+// These are the animations________________________________________________________________________________
+
+@keyframes wholePageGoDark {
+  0% {
+    background-color: rgba($color: black, $alpha: 0);
+  }
+  100% {
+    background-color: rgba($color: black, $alpha: 0.8);
+  }
+}
+
+@keyframes wholePageGoLight {
+  0% {
+    background-color: rgba($color: black, $alpha: 0.8);
+  }
+  100% {
+    background-color: rgba($color: black, $alpha: 0);
+  }
+}
+
+@keyframes openSideMenu {
+  0% {
+    transform: translateX(23vw);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}
+
+@keyframes openSideMenu-600px {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}
+
+@keyframes closeSideMenu {
+  0% {
+    transform: translateX(0vw);
+  }
+  100% {
+    transform: translateX(23vw);
+  }
+}
+
+@keyframes closeSideMenu-600px {
+  0% {
+    transform: translateX(0vw);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+@keyframes sub_menu_openning {
+  0% {
+    transform: translateX(-23vw);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}
+
+@keyframes sub_menu_openning-600px {
+  0% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}
+
+@keyframes sub_menu_closing {
+  0% {
+    transform: translateX(0vw);
+  }
+  100% {
+    transform: translateX(-23vw);
+  }
+}
+
+@keyframes sub_menu_closing-600px {
+  0% {
+    transform: translateX(0vw);
+  }
+  100% {
+    transform: translateX(-100vw);
+  }
+}
